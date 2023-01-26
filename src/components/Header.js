@@ -1,12 +1,12 @@
 // Header.js
 
 import React from 'react'
-
+import logo from '../images/logo.png';
 
 const Header = () => {
   return (
-    <div>
-      <h1>Gravity Falls Memory Game</h1>
+    <div className="footer">
+      <img src={logo} alt="pokemon memory" />
     </div>
   )
 }

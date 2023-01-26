@@ -5,7 +5,7 @@ import React from 'react'
 const Main = () => {
 
   return (
-    <div>
+    <div className='main'>
       <p>Hello World</p>
     </div>
   )
