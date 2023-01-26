@@ -1,25 +1,26 @@
 /* GENERAL */
 :root {
-  --hit-color: #9b1616;
-  --miss-color: #27a8a8;
-  --water-color: #115f0f;
-  --primary-light:  #cfd8d1;
-  --secondary-light: #82897f;
-  --primary-dark: #1e2d30;
-  --secondary-dark: #323c3d;
-  --cell-size: 25px;
+  --red: #c52018;
+  --yellow-bright: #f6bd20;
+  --yellow-light: #f6e652;
+  --yellow-dark: #de9400;
+  --brown-dark: #623108;
+  --brown-light: #9c5200;
+  --cream-light: #fff6a4;
+  --grey-blue: #41414a;
+  --dark-grey: #292929;
 }
 
 html {
   font-size: 1rem;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  color: var(--primary-dark);
+  color: var(--cream-light);
 }
 
 body {
-  background-color: var(--secondary-light);
+  background-color: var(--grey-blue);
   margin: 0;
-  color: var(--primary-dark);
+  color: var(--cream-light);
 }
 
 .app {
@@ -30,8 +31,8 @@ body {
 
 .header,
 .footer {
-  background-color: var(--primary-dark);
+  background-color: var(--red);
   display: flex;
   justify-content: center;
-  color: var(--primary-light);
+  color: var(--yellow-bright);
 }
