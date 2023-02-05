@@ -19,7 +19,7 @@ const Main = () => {
 
 
   const fetchPoke = async (num) => {
-    const tempArr = [];
+    const pokeArr = [];
     for (let i = 1; i <= num; i++) {
       const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${i}`;
       const response = await fetch(pokeUrl);
@@ -27,9 +27,15 @@ const Main = () => {
       const pokeId = pokemon.id;
       const pokeName = pokemon.name;
       const pokeImage = pokemon.sprites.front_default;
-      tempArr.push({ pokeId, pokeName, pokeImage });
+      pokeArr.push({ pokeId, pokeName, pokeImage });
     }
-    return tempArr;
+    return pokeArr;
+  }
+
+  const clickPokeCard = (e) => {
+    setCurrentScore(currentScore + 1);
+    setPokeArr(randomize(pokeArr));
+    console.log(e.target.id);
   }
 
 
@@ -40,6 +46,7 @@ const Main = () => {
       />
       <PokeCards 
         pokeArr={pokeArr}
+        clickPokeCard={clickPokeCard}
       />
     </div>
   )
