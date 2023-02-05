@@ -1,19 +1,22 @@
-// Cards.js
+// PokeCards.js
 
 import React from 'react';
+import Card from './Card';
 
-const pokeCards = (props) => {
+const PokeCards = ({ pokeArr }) => {
 
-  const CardsGrid = ({ pokemArr }) => {
-    const pokemonCards = pokeArr.map((pokemon) => (
-      <Card key={pokemon.id} pokemon={pokemon} />
-    ))
-  }
+  const pokemonCards = pokeArr.map((poke) => (
+    <Card
+      key={poke.pokeId} 
+      poke={poke}
+    />
+  ))
 
   return (
-    {pokemonCards}
+    <div className='cards'>
+      {pokemonCards}
+    </div>
   )
-
 }
 
-export default pokeCards;
+export default PokeCards;

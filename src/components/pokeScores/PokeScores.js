@@ -1,15 +1,15 @@
-// Scores.js
+// PokeScores.js
 
 import React from 'react'
 
-const Scores = () => {
+const PokeScores = ({ currentScore }) => {
 
   return (
     <div className='scoreboard'>
-      <p>score</p>
+      <p>Current Score: {currentScore}</p>
       <p>high score</p>
     </div>
   )
 }
 
-export default Scores;
+export default PokeScores;
