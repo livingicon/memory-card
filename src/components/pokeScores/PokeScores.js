@@ -2,12 +2,12 @@
 
 import React from 'react'
 
-const PokeScores = ({ currentScore }) => {
+const PokeScores = ({ currentScore, highScore }) => {
 
   return (
     <div className='scoreboard'>
       <p>Current Score: {currentScore}</p>
-      <p>high score</p>
+      <p>High Score: {highScore}</p>
     </div>
   )
 }

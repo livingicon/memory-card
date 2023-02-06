@@ -6,9 +6,11 @@ import PokeCards from './pokeCards/PokeCards';
 import { randomize } from '../utilities';
 
 const Main = () => {
-  const [ pokeArr, setPokeArr ] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0);
+  const [pokeArr, setPokeArr] = useState([]);
   const [memorized, setMemorized] = useState([]);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
 
 
   useEffect(() => {
@@ -34,14 +36,26 @@ const Main = () => {
   }
 
   const clickPokeCard = (e) => {
-    setPokeArr(randomize([...pokeArr])); // shuffles array
-    console.log(e.target.id);
+  // consider breaking up? playround function or something? More useEffect?
+    setPokeArr(randomize([...pokeArr])); // shuffles display
+    if (memorized.filter(poke => (poke.pokeName === e.target.className)).length === 0) { // if it's not memorized already
+      setMemorized(memorized.concat(pokeArr[pokeArr.findIndex((poke) => (poke.pokeName === e.target.className))])); //add to array
+      setCurrentScore(currentScore + 1);
+      if (currentScore >= highScore) { // why equal to make it not one behind?
+        setHighScore(highScore + 1);
+      }
+    } else {
+      // reset game cuz it matches
+      setCurrentScore(0);
+      setMemorized([]);
+    }
   }
 
 
   return (
     <div className='main'>
       <PokeScores 
+        highScore={highScore}
         currentScore={currentScore}
       />
       <PokeCards 

@@ -5,9 +5,10 @@ import React from 'react';
 const Card = ({ poke, clickPokeCard }) => {
 
   return (
-    <div id={poke.pokeName} onClick={clickPokeCard} >
-      <img src={poke.pokeImage} alt={poke.pokeName} />
-      <p>{poke.pokeName}</p>
+    // should I change className to pokeID?
+    <div className={poke.pokeName} onClick={clickPokeCard} >
+      <img src={poke.pokeImage} alt={poke.pokeName} className={poke.pokeName}/>
+      <p className={poke.pokeName}>{poke.pokeName}</p>
     </div>
 
   )
