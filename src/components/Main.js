@@ -7,7 +7,8 @@ import { randomize } from '../utilities';
 
 const Main = () => {
   const [ pokeArr, setPokeArr ] = useState([]);
-  const [currentScore, setCurrentScore] = useState(0)
+  const [currentScore, setCurrentScore] = useState(0);
+  const [memorized, setMemorized] = useState([]);
 
 
   useEffect(() => {
@@ -33,8 +34,7 @@ const Main = () => {
   }
 
   const clickPokeCard = (e) => {
-    setCurrentScore(currentScore + 1);
-    setPokeArr(randomize(pokeArr));
+    setPokeArr(randomize([...pokeArr])); // shuffles array
     console.log(e.target.id);
   }
 
