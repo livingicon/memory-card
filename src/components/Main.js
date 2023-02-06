@@ -45,10 +45,13 @@ const Main = () => {
         setHighScore(highScore + 1);
       }
     } else {
-      // reset game cuz it matches
-      setCurrentScore(0);
-      setMemorized([]);
+      setNewGame();
     }
+  }
+
+  const setNewGame = () => {
+    setCurrentScore(0);
+    setMemorized([]);
   }
 
 
