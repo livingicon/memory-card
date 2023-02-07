@@ -23,6 +23,7 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  border: 5px solid var(--dark-grey);
 }
 
 .header,
@@ -30,22 +31,43 @@ body {
   background-color: var(--red);
   display: flex;
   justify-content: center;
-  color: var(--yellow);
+  color: var(--dark-grey);
+  border: 5px solid var(--dark-grey);
 }
 
 .main {
   display: flex;
+  justify-items: center;
+  border: 5px solid var(--dark-grey);
+
 }
 
 .scoreBoard {
   background-color: var(--yellow);
+  padding: 10px;
+  color: var(--cream);
+  box-shadow: 5px 5px 10px var(--dark-grey);
+}
+
+.score {
+  background-color: var(--red);
+  padding: 10px;
+  border: solid 4px var(--dark-grey);
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px var(--dark-grey);
 }
 
 .cards {
-  display: flex;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  margin-bottom: 15px;
+  margin-left: 10px;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   max-width: 117px;
   min-width: 117px;
   max-height: 117px;
@@ -54,11 +76,18 @@ body {
   margin: 10px;
   border: solid 2px var(--red);
   border-radius: 8px;
-  box-shadow: 10px 10px 10px var(--dark-grey);
+  box-shadow: 10px 20px 10px var(--dark-grey);
+}
+
+.card:hover {
+  -ms-transform: scale(1.5); 
+  transform: scale(1.1);
 }
 
 .cardTitle {
-  margin: 0px;
+  margin: 3px 0px 15px 0px;
   font-size: .9rem;
   font-weight: bold;
+  text-align: center;
+  color: var(--cream);
 }

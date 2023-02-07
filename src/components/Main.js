@@ -13,7 +13,7 @@ const Main = () => {
 
   useEffect(() => {
     const displayCards = async () => {
-      setPokeArr(randomize(await fetchPoke(12)))
+      setPokeArr(randomize(await fetchPoke(25)))
     }
     displayCards();
   }, [])

@@ -5,10 +5,10 @@ import React from 'react'
 const PokeScores = ({ currentScore, highScore }) => {
 
   return (
-    <div className="scoreBoard">
-      <h2>Score Board</h2>
-      <p>Current Score: {currentScore}</p>
-      <p>High Score: {highScore}</p>
+    <div className="score">
+      <h2 id="scoreTitle">Score Board</h2>
+      <p id="currentScore">Current Score: {currentScore}</p>
+      <p id="highScore">High Score: {highScore}</p>
     </div>
   )
 }
