@@ -1,26 +1,22 @@
 /* GENERAL */
 :root {
   --red: #c52018;
-  --yellow-bright: #f6bd20;
-  --yellow-light: #f6e652;
-  --yellow-dark: #de9400;
-  --brown-dark: #623108;
-  --brown-light: #9c5200;
-  --cream-light: #fff6a4;
-  --grey-blue: #41414a;
-  --dark-grey: #292929;
+  --yellow: #f4d13b;
+  --blue: #344b97;
+  --dark-grey: #1d2233;
+  --cream: #f7f8d9;
+
 }
 
 html {
   font-size: 1rem;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  color: var(--cream-light);
 }
 
 body {
-  background-color: var(--grey-blue);
+  background-color: var(--blue);
   margin: 0;
-  color: var(--cream-light);
+  color: var(--dark-grey);
 }
 
 .app {
@@ -34,5 +30,35 @@ body {
   background-color: var(--red);
   display: flex;
   justify-content: center;
-  color: var(--yellow-bright);
+  color: var(--yellow);
+}
+
+.main {
+  display: flex;
+}
+
+.scoreBoard {
+  background-color: var(--yellow);
+}
+
+.cards {
+  display: flex;
+}
+
+.card {
+  max-width: 117px;
+  min-width: 117px;
+  max-height: 117px;
+  min-height: 117px;
+  background-color: var(--cream);
+  margin: 10px;
+  border: solid 2px var(--red);
+  border-radius: 8px;
+  box-shadow: 10px 10px 10px var(--dark-grey);
+}
+
+.cardTitle {
+  margin: 0px;
+  font-size: .9rem;
+  font-weight: bold;
 }

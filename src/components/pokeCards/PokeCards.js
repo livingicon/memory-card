@@ -14,7 +14,7 @@ const PokeCards = ({ pokeArr, playGame }) => {
   ))
 
   return (
-    <div className='cards'>
+    <div className="cards">
       {pokemonCards}
     </div>
   )

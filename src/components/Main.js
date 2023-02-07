@@ -35,9 +35,9 @@ const Main = () => {
 
   const playGame = (e) => {
     shuffleDisplay();
-    if (memorized.filter(poke => (poke.pokeName === e.target.className)).length === 0) {
+    if (memorized.filter(poke => (poke.pokeName === e.target.id)).length === 0) {
       setMemorized(memorized.concat(pokeArr[pokeArr.findIndex((poke) => 
-        (poke.pokeName === e.target.className))]));
+        (poke.pokeName === e.target.id))]));
       incrementScore();
       incrementHighScore();
     } else {
@@ -56,15 +56,19 @@ const Main = () => {
   }
 
   return (
-    <div className='main'>
-      <PokeScores 
-        highScore={highScore}
-        currentScore={currentScore}
-      />
-      <PokeCards 
-        pokeArr={pokeArr}
-        playGame={playGame}
-      />
+    <div className="main">
+      <div className="scoreBoard">
+        <PokeScores 
+          highScore={highScore}
+          currentScore={currentScore}
+        />
+      </div>
+      <div className="gameBoard">
+        <PokeCards 
+          pokeArr={pokeArr}
+          playGame={playGame}
+        />
+      </div>
     </div>
   )
 }
