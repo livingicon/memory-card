@@ -3,13 +3,13 @@
 import React from 'react';
 import Card from './Card';
 
-const PokeCards = ({ pokeArr, clickPokeCard }) => {
+const PokeCards = ({ pokeArr, playGame }) => {
 
   const pokemonCards = pokeArr.map((poke) => (
     <Card
       key={poke.pokeId} 
       poke={poke}
-      clickPokeCard={clickPokeCard}
+      playGame={playGame}
     />
   ))
 

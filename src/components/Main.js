@@ -11,8 +11,6 @@ const Main = () => {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
-
-
   useEffect(() => {
     const displayCards = async () => {
       setPokeArr(randomize(await fetchPoke(12)))
@@ -35,25 +33,27 @@ const Main = () => {
     return pokeArr;
   }
 
-  const clickPokeCard = (e) => {
-  // consider breaking up? playround function or something? More useEffect?
-    setPokeArr(randomize([...pokeArr])); // shuffles display
-    if (memorized.filter(poke => (poke.pokeName === e.target.className)).length === 0) { // if it's not memorized already
-      setMemorized(memorized.concat(pokeArr[pokeArr.findIndex((poke) => (poke.pokeName === e.target.className))])); //add to array
-      setCurrentScore(currentScore + 1);
-      if (currentScore >= highScore) { // why equal to make it not one behind?
-        setHighScore(highScore + 1);
-      }
+  const playGame = (e) => {
+    shuffleDisplay();
+    if (memorized.filter(poke => (poke.pokeName === e.target.className)).length === 0) {
+      setMemorized(memorized.concat(pokeArr[pokeArr.findIndex((poke) => 
+        (poke.pokeName === e.target.className))]));
+      incrementScore();
+      incrementHighScore();
     } else {
       setNewGame();
     }
   }
 
+  // playGame Helpers
+  const shuffleDisplay = () => setPokeArr(randomize([...pokeArr]));
+  const incrementScore = () => setCurrentScore(currentScore + 1);
+  const incrementHighScore = () => (currentScore >= highScore) ? 
+    setHighScore(highScore + 1) : null;
   const setNewGame = () => {
     setCurrentScore(0);
     setMemorized([]);
   }
-
 
   return (
     <div className='main'>
@@ -63,7 +63,7 @@ const Main = () => {
       />
       <PokeCards 
         pokeArr={pokeArr}
-        clickPokeCard={clickPokeCard}
+        playGame={playGame}
       />
     </div>
   )
