@@ -12,7 +12,7 @@
 <pre class="notranslate">
   <code>
     git clone https://github.com/livingicon/memory-card.git
-    cd shopping-cart
+    cd memory-card
     npm install
     npm start
   </code>
